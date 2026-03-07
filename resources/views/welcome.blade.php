@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juanillas Workspace</title>
+<x-layout>
+    <x-slot name="heading">
+        <h1>Welcome here {{ $name ?? 'Partner' }}</h1>
+    </x-slot>
+
     <style>
-        body {
+        .page {
             background-color: #0f172a;
             color: #f8fafc;
             font-family: 'Inter', -apple-system, sans-serif;
-            margin: 0;
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .sidebar-accent {
             width: 8px;
             background: linear-gradient(to bottom, #38bdf8, #818cf8);
-            height: 100%;
         }
 
         .main-content {
@@ -41,9 +38,6 @@
             line-height: 1.1;
             margin: 0;
             font-weight: 800;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .user-name {
@@ -62,31 +56,27 @@
             margin-top: 40px;
             color: #f8fafc;
             text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: gap 0.3s;
-        }
-
-        .action-link:hover {
-            gap: 15px;
         }
     </style>
-</head>
-<body>
-    <div class="sidebar-accent"></div>
-    <main class="main-content">
-        <div class="date-label">Project: Juanillas App</div>
-        <h1 class="hero-title">
-            Glad you're back, <br>
-            <span class="user-name">{{ $name ?? 'Partner' }}</span>.
-        </h1>
-        <p class="description">
-            Your environment is synchronized and ready for the next deployment. 
-            All systems are currently performing at peak efficiency.
-        </p>
-        <a href="#" class="action-link">Enter Dashboard &rarr;</a>
-    </main>
-</body>
-</html>
+
+    <div class="page">
+        <div class="sidebar-accent"></div>
+
+        <main class="main-content">
+            <div class="date-label">Project: Juanillas App</div>
+
+            <h1 class="hero-title">
+                Glad you're back,<br>
+                <span class="user-name">{{ $name ?? 'Partner' }}</span>.
+            </h1>
+
+            <p class="description">
+                Your environment is synchronized and ready for the next deployment.
+                All systems are currently performing at peak efficiency.
+            </p>
+
+            <a href="#" class="action-link">Enter Dashboard →</a>
+        </main>
+    </div>
+
+</x-layout>
